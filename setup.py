@@ -9,5 +9,6 @@ setup(
     version=_version,
     packages=find_packages(
         include=(_package_name, "%s.*" % _package_name)
-    )
+    ),
+    scripts=['pycheckstyle.py'],
 )
