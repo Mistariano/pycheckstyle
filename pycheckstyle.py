@@ -17,6 +17,9 @@ if __name__ == "__main__":
 
     default_std = SunStandard if default_std_name == 'sun' else GoogleStandard
     std = CheckStandard(config) if config is not None else default_std()
-    for message in std.check(path):
-        print(message.level, message.type, message.message)
-        print(message.position)
+    check_res = std.check(path)
+    if len(check_res) > 0:
+        for message in check_res:
+            print(message.level, message.type, message.message)
+            print(message.position)
+        exit(1)
