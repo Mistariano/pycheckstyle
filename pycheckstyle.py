@@ -13,7 +13,6 @@ if __name__ == "__main__":
     default_std_name = args.default
     assert path is not None
 
-    print("Version:", checkstyle_version)
     print("Checking", path, '...')
 
     default_std = SunStandard if default_std_name == 'sun' else GoogleStandard
